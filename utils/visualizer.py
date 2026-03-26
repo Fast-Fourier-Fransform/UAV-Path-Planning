@@ -69,13 +69,17 @@ def plot_multiple_3d_paths(map_data, all_paths_data, title="3D Path Comparison")
         x_grid = np.arange(map_data.shape[0])
         y_grid = np.arange(map_data.shape[1])
 
+        # 🌟 开启基于物理的渲染 (PBR)：漫反射、粗糙度与镜面高光设定
         fig.add_trace(go.Surface(
             z=map_data.T,
             x=x_grid,
             y=y_grid,
             colorscale='Greys',
-            opacity=1.0,
+            opacity=1.0,  # 微调至 0.9，保留极少的通透感同时强化岩石实体感
             showscale=False,
+            # 这里的材质参数是模拟干旱岩石/荒漠山脉的绝佳组合
+            lighting=dict(ambient=0.3, diffuse=0.8, roughness=0.9, specular=0.1, fresnel=0.1),
+            lightposition=dict(x=0, y=0, z=1000),  # 模拟正午强烈的直射阳光，制造深邃的山谷阴影
             contours_z=dict(show=True, usecolormap=True, highlightcolor="limegreen", project_z=True)
         ))
     else:

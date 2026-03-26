@@ -6,7 +6,7 @@ import numpy as np
 SEARCH_AGENTS_NO = 50
 MAX_ITERATION = 150
 # 将控制点减少，恢复航线的“物理刚性”，彻底消灭麻花弯！
-NODES_NUMBER = 6       # 建议设为 5 到 8 之间
+NODES_NUMBER = 5       # 建议设为 5 到 8 之间
 DIM = 2 * NODES_NUMBER
 LB = 0
 
@@ -36,7 +36,7 @@ def set_env(env_type):
         START_POINT = [10.0, 10.0, 15.0]
         END_POINT = [190.0, 190.0, 15.0]
         # 山地倾向于拉直并紧贴地形
-        W1, W2, W3 = 0.8, 0.1, 0.1
+        W1, W2, W3 = 0.7, 0.1, 0.2
         OBSTACLES = []
 
     elif env_type == 'cylinder':
