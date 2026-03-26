@@ -7,8 +7,8 @@ import config
 # 'mountain' -> 复杂山地地形
 # 'cylinder' -> 城市雷达圆柱体
 # ==========================================
-#TARGET_ENV = 'mountain'
-TARGET_ENV = 'cylinder'
+TARGET_ENV = 'mountain'
+#TARGET_ENV = 'cylinder'
 config.set_env(TARGET_ENV)
 
 from environment import UAVEnvironment
